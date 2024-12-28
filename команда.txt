@@ -1,0 +1,11 @@
+function updateCookie(name, newValue, daysToExpire) {
+    const date = new Date();
+    date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000)); 
+    const expires = date.toUTCString(); 
+
+    document.cookie = ${name}=${newValue}; expires=${expires}; path=/; domain=.tatar.ru; secure=false; SameSite=None;
+}
+
+const newAupdTokenValue = "ПОЛОЖИТЕ_СВОЙ_ТОКЕН_СЮДА";
+
+updateCookie('aupd_token', newAupdTokenValue, 3);
